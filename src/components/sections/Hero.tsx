@@ -14,7 +14,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50"
+      className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-blue-950 dark:to-slate-900"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -67,13 +67,13 @@ export const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-blue-200 shadow-lg"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-full border border-blue-200 dark:border-blue-800 shadow-lg"
           >
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
             </span>
-            <span className="text-sm font-medium text-slate-700">Available for opportunities</span>
+            <span className="text-sm font-medium text-slate-700 dark:text-slate-200">Available for opportunities</span>
           </motion.div>
 
           {/* Main heading with gradient */}
@@ -84,7 +84,7 @@ export const Hero = () => {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-tight"
             >
-              <span className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 dark:from-white dark:via-blue-100 dark:to-white bg-clip-text text-transparent">
                 Sonu Baghel
               </span>
             </motion.h1>
@@ -107,7 +107,7 @@ export const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="text-xl sm:text-2xl md:text-3xl text-slate-700 max-w-4xl mx-auto leading-relaxed font-medium"
+            className="text-xl sm:text-2xl md:text-3xl text-slate-700 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-medium"
           >
             Building production systems with{' '}
             <span className="text-blue-600 font-semibold">React</span>,{' '}
@@ -143,7 +143,7 @@ export const Hero = () => {
             </a>
             <a
               href="#experience"
-              className="px-10 py-5 bg-white/80 backdrop-blur-sm text-slate-800 border-2 border-slate-300 rounded-2xl font-semibold text-lg hover:border-blue-600 hover:bg-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="px-10 py-5 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-800 dark:text-white border-2 border-slate-300 dark:border-slate-600 rounded-2xl font-semibold text-lg hover:border-blue-600 dark:hover:border-blue-400 hover:bg-white dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
               View Work
             </a>
@@ -165,11 +165,11 @@ export const Hero = () => {
               transition={{ delay: 1.2 + index * 0.1, duration: 0.5 }}
               className="relative group"
             >
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-200 shadow-lg hover:shadow-2xl hover:border-blue-300 transition-all duration-300 hover:-translate-y-2">
+              <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:-translate-y-2">
                 <div className="text-5xl md:text-6xl font-bold bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-display mb-2">
                   {stat.number}
                 </div>
-                <div className="text-slate-600 font-medium text-sm md:text-base">{stat.label}</div>
+                <div className="text-slate-600 dark:text-slate-300 font-medium text-sm md:text-base">{stat.label}</div>
                 
                 {/* Hover effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -189,7 +189,7 @@ export const Hero = () => {
             href="#about"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center text-slate-600 hover:text-blue-600 transition-colors"
+            className="flex flex-col items-center text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
             <span className="text-sm font-medium mb-2">Scroll to explore</span>
             <HiArrowDown className="w-6 h-6" />

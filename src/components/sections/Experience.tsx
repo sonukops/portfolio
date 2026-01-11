@@ -81,7 +81,7 @@ export const Experience = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {[...EDUCATION, ...CERTIFICATIONS].map((item, index) => (
               <div key={index} className="border-l-4 border-blue-600 pl-4">
-                <h4 className="font-semibold text-lg text-slate-900">{item.degree}</h4>
+                <h4 className="font-semibold text-lg text-slate-900 dark:text-white">{item.degree}</h4>
                 <p className="text-slate-600">{item.institution}</p>
               </div>
             ))}

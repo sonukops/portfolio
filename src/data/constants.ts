@@ -4,12 +4,12 @@ export const CONTACT_INFO: ContactInfo = {
   email: 'sonu.baghel06@gmail.com',
   phone: '+91 87700 53678',
   location: 'Gurgaon, India',
-  github: 'https://github.com/sonukops',
-  linkedin: 'https://www.linkedin.com/in/sonu-baghel-668867125',
+  github: 'https://github.com/sonubaghel',
+  linkedin: 'https://www.linkedin.com/in/sonu-baghel',
 };
 
 export const HERO_STATS: Stat[] = [
-  { number: '9+', label: 'Years Experience' },
+  { number: '8+', label: 'Years Experience' },
   { number: '150K+', label: 'Users Impacted' },
   { number: '60%', label: 'Performance Gains' },
   { number: '3x', label: 'Faster Delivery' },
@@ -36,6 +36,7 @@ export const ABOUT_PARAGRAPHS = [
 export const NAV_LINKS = [
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
   { name: 'Experience', href: '#experience' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -43,13 +44,13 @@ export const NAV_LINKS = [
 export const SOCIAL_LINKS = [
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/sonu-baghel-668867125',
+    url: 'https://www.linkedin.com/in/sonu-baghel',
     icon: 'linkedin',
     color: 'from-blue-600 to-blue-700',
   },
   {
     name: 'GitHub',
-    url: 'https://github.com/sonukops',
+    url: 'https://github.com/sonubaghel',
     icon: 'github',
     color: 'from-slate-700 to-slate-900',
   },

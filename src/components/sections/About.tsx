@@ -28,7 +28,7 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 px-4 bg-white relative overflow-hidden">
+    <section id="about" className="py-24 px-4 bg-white dark:bg-slate-900 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50" />
       
@@ -69,7 +69,7 @@ export const About = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-shadow">
                 <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-2">
-                  9+
+                  8+
                 </div>
                 <div className="text-slate-600 font-medium">Years Experience</div>
               </div>
@@ -114,7 +114,7 @@ export const About = () => {
                           {item.value}
                         </a>
                       ) : (
-                        <div className="text-lg font-semibold text-slate-900">{item.value}</div>
+                        <div className="text-lg font-semibold text-slate-900 dark:text-white">{item.value}</div>
                       )}
                     </div>
                   </div>

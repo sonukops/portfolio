@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS } from '@/data/constants';
 import { Logo } from '@/components/ui/Logo';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ export const Navigation = () => {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 backdrop-blur-xl shadow-lg border-b border-slate-200/50'
+          ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl shadow-lg border-b border-slate-200/50 dark:border-slate-700/50'
           : 'bg-transparent'
       }`}
     >
@@ -47,16 +48,21 @@ export const Navigation = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="relative px-4 py-2 text-slate-700 font-medium transition-colors group"
+                className="relative px-4 py-2 text-slate-700 dark:text-slate-300 font-medium transition-colors group"
               >
                 <span className="relative z-10">{link.name}</span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
                   whileHover={{ scale: 1.05 }}
                 />
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 group-hover:w-full transition-all duration-300" />
               </motion.a>
             ))}
+            
+            {/* Theme Toggle */}
+            <div className="ml-2">
+              <ThemeToggle />
+            </div>
             
             {/* CTA Button */}
             <motion.a
@@ -72,29 +78,32 @@ export const Navigation = () => {
             </motion.a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-xl hover:bg-slate-100 transition-colors relative z-50"
-            aria-label="Toggle menu"
-            aria-expanded={isOpen}
-          >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <motion.span
-                animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-                className="w-full h-0.5 bg-slate-900 rounded-full transition-all"
-              />
-              <motion.span
-                animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="w-full h-0.5 bg-slate-900 rounded-full transition-all"
-              />
-              <motion.span
-                animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-                className="w-full h-0.5 bg-slate-900 rounded-full transition-all"
-              />
-            </div>
-          </motion.button>
+          {/* Mobile Menu Button & Theme Toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors relative z-50"
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+            >
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <motion.span
+                  animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+                  className="w-full h-0.5 bg-slate-900 dark:bg-white rounded-full transition-all"
+                />
+                <motion.span
+                  animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+                  className="w-full h-0.5 bg-slate-900 dark:bg-white rounded-full transition-all"
+                />
+                <motion.span
+                  animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+                  className="w-full h-0.5 bg-slate-900 dark:bg-white rounded-full transition-all"
+                />
+              </div>
+            </motion.button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -107,7 +116,7 @@ export const Navigation = () => {
               transition={{ duration: 0.3 }}
               className="md:hidden overflow-hidden"
             >
-              <div className="px-2 pt-2 pb-6 space-y-2 bg-white/95 backdrop-blur-xl rounded-2xl mt-4 shadow-xl border border-slate-200">
+              <div className="px-2 pt-2 pb-6 space-y-2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl mt-4 shadow-xl border border-slate-200 dark:border-slate-700">
                 {NAV_LINKS.map((link, index) => (
                   <motion.a
                     key={link.name}
@@ -116,7 +125,7 @@ export const Navigation = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-600 transition-all"
+                    className="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 dark:hover:from-blue-900/30 dark:hover:to-indigo-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all"
                   >
                     {link.name}
                   </motion.a>
