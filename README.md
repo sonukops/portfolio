@@ -15,10 +15,10 @@ Vite is the modern, fastest build tool recommended for React projects.
 
 ```bash
 # Create a new Vite + React + TypeScript project
-npm create vite@latest sonu-baghel-portfolio -- --template react-ts
+npm create vite@latest portfolio -- --template react-ts
 
 # Navigate to project directory
-cd sonu-baghel-portfolio
+cd portfolio
 
 # Install dependencies
 npm install
@@ -32,7 +32,6 @@ npm install tailwindcss @tailwindcss/vite
 
 
 # Install additional dependencies
-npm install react-router-dom
 npm install framer-motion  # For advanced animations
 npm install react-icons    # For consistent icons
 
@@ -87,7 +86,7 @@ body {
 Create the following folder structure:
 
 ```
-sonu-baghel-portfolio/
+portfolio/
 ├── public/
 │   └── assets/
 │       └── images/
@@ -273,7 +272,7 @@ git commit -m "Initial commit: Setup React portfolio with TypeScript and Tailwin
 ### Create GitHub Repository
 
 1. Go to [GitHub](https://github.com) and create a new repository
-2. Name it: `sonu-baghel-portfolio`
+2. Name it: `portfolio`
 3. Don't initialize with README (we already have one)
 4. Click "Create repository"
 
@@ -281,7 +280,7 @@ git commit -m "Initial commit: Setup React portfolio with TypeScript and Tailwin
 
 ```bash
 # Add remote repository
-git remote add origin https://github.com/YOUR_USERNAME/sonu-baghel-portfolio.git
+git remote add origin https://github.com/sonukops/portfolio.git
 
 # Rename branch to main (if needed)
 git branch -M main
