@@ -4,24 +4,24 @@ export const CONTACT_INFO: ContactInfo = {
   email: 'sonu.baghel06@gmail.com',
   phone: '+91 87700 53678',
   location: 'Gurgaon, India',
-  github: 'https://github.com/sonubaghel',
-  linkedin: 'https://www.linkedin.com/in/sonu-baghel',
+  github: 'https://github.com/sonubaghel/sonukops',
+  linkedin: 'https://www.linkedin.com/in/sonu-baghel-668867125',
 };
 
 export const HERO_STATS: Stat[] = [
-  { number: '8+', label: 'Years Experience' },
+  { number: '9+', label: 'Years Experience' },
   { number: '150K+', label: 'Users Impacted' },
   { number: '60%', label: 'Performance Gains' },
   { number: '3x', label: 'Faster Delivery' },
 ];
 
-export const PROFESSIONAL_SUMMARY = `Full-stack engineer with 8+ years of experience building production systems 
+export const PROFESSIONAL_SUMMARY = `Full-stack engineer with 9+ years of experience building production systems 
 across web and mobile platforms. I specialize in identifying performance bottlenecks, 
 redesigning critical systems under load, and establishing engineering practices that 
 prevent future problems.`;
 
 export const ABOUT_PARAGRAPHS = [
-  `Full-stack engineer with <strong>8+ years</strong> of experience building production systems 
+  `Full-stack engineer with <strong>9+ years</strong> of experience building production systems 
   across web and mobile platforms. I specialize in identifying performance bottlenecks, 
   redesigning critical systems under load, and establishing engineering practices that 
   prevent future problems.`,
