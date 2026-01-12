@@ -1,9 +1,9 @@
+// ADD this line after the imports:
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
@@ -14,6 +14,7 @@ export default defineConfig({
       '@/utils': path.resolve(__dirname, './src/utils'),
       '@/types': path.resolve(__dirname, './src/types'),
       '@/data': path.resolve(__dirname, './src/data'),
+      '@/contexts': path.resolve(__dirname, './src/contexts'),
     },
   },
   server: {
@@ -24,13 +25,18 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
     minify: 'terser',
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
           'motion-vendor': ['framer-motion'],
+          'icons-vendor': ['react-icons'],
         },
       },
     },
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'framer-motion', 'react-icons'],
   },
 });
