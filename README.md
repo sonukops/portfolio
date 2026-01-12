@@ -207,16 +207,22 @@ Update `tsconfig.json`:
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+
+    /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+
+    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+
+    /* Path Aliases */
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
@@ -230,17 +236,19 @@ Update `tsconfig.json`:
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
+
 ```
 
 Update `vite.config.ts` to support path aliases:
 
 ```typescript
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -249,9 +257,32 @@ export default defineConfig({
       '@/utils': path.resolve(__dirname, './src/utils'),
       '@/types': path.resolve(__dirname, './src/types'),
       '@/data': path.resolve(__dirname, './src/data'),
+      '@/contexts': path.resolve(__dirname, './src/contexts'),
     },
   },
-})
+  server: {
+    port: 3000,
+    open: true,
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    minify: 'esbuild',
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'motion-vendor': ['framer-motion'],
+          'icons-vendor': ['react-icons'],
+        },
+      },
+    },
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'framer-motion', 'react-icons'],
+  },
+});
 ```
 
 ## Step 8: Git Setup and GitHub Deployment
@@ -305,51 +336,6 @@ git push -u origin main
 
 Your site will be live at: `https://sonu-baghel-portfolio.vercel.app`
 
-### Option 2: Netlify
-
-1. Go to [netlify.com](https://netlify.com)
-2. Sign up with GitHub
-3. Click "Add new site" → "Import an existing project"
-4. Connect to GitHub and select your repository
-5. Configure:
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-6. Click "Deploy site"
-
-### Option 3: GitHub Pages
-
-Install gh-pages:
-
-```bash
-npm install -D gh-pages
-```
-
-Update `package.json`:
-
-```json
-{
-  "homepage": "https://YOUR_USERNAME.github.io/sonu-baghel-portfolio",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  }
-}
-```
-
-Update `vite.config.ts`:
-
-```typescript
-export default defineConfig({
-  base: '/sonu-baghel-portfolio/',
-  // ... rest of config
-})
-```
-
-Deploy:
-
-```bash
-npm run deploy
-```
 
 ## Step 10: Development Workflow
 

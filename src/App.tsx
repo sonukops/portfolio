@@ -1,11 +1,15 @@
+import { lazy, Suspense } from "react";
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { Navigation } from '@/components/layout/Navigation';
 import { Hero } from '@/components/sections/Hero';
-import { About } from '@/components/sections/About';
-import { Skills } from '@/components/sections/Skills';
-import { Projects } from '@/components/sections/Projects';
-import { Experience } from '@/components/sections/Experience';
-import { Contact } from '@/components/sections/Contact';
+
+// Lazy load heavy sections
+const About = lazy(() => import('@/components/sections/About').then(m => ({ default: m.About })));
+const Skills = lazy(() => import('@/components/sections/Skills').then(m => ({ default: m.Skills })));
+const Projects = lazy(() => import('@/components/sections/Projects').then(m => ({ default: m.Projects })));
+const Experience = lazy(() => import('@/components/sections/Experience').then(m => ({ default: m.Experience })));
+const Contact = lazy(() => import('@/components/sections/Contact').then(m => ({ default: m.Contact })));
+
 
 function App() {
   return (
@@ -14,11 +18,13 @@ function App() {
         <Navigation />
         <main>
           <Hero />
+          <Suspense fallback={<div className="h-20" />}>
           <About />
           <Skills />
           <Projects />
           <Experience />
           <Contact />
+          </Suspense>
         </main>
       </div>
     </ThemeProvider>
