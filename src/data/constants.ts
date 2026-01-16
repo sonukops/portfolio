@@ -44,13 +44,13 @@ export const NAV_LINKS = [
 export const SOCIAL_LINKS = [
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/sonu-baghel',
+    url: 'https://www.linkedin.com/in/sonu-baghel-668867125',
     icon: 'linkedin',
     color: 'from-blue-600 to-blue-700',
   },
   {
     name: 'GitHub',
-    url: 'https://github.com/sonubaghel',
+    url: 'https://github.com/sonubaghel/sonukops',
     icon: 'github',
     color: 'from-slate-700 to-slate-900',
   },
