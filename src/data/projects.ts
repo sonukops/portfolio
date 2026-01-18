@@ -21,7 +21,7 @@ export const PROJECTS: Project[] = [
     duration: 'March 2024 – Present',
     role: 'Frontend Lead',
     teamSize: '20+',
-    technologies: ['React Native', 'TypeScript', 'GraphQL', 'Storybook'],
+    technologies: ['React Native', 'Node.js', 'TypeScript', 'GraphQL', 'Storybook'],
     description:
       'PRMNXT is a comprehensive revamp of existing applications (MSales, MService, PRM Sales and PRM Service), loosening tight coupling with Siebel for better flexibility and scalability.',
     features: [
@@ -78,7 +78,7 @@ export const PROJECTS: Project[] = [
     duration: 'Mar 2022 – Oct 2022',
     role: 'Web and Mobile Developer',
     teamSize: '2',
-    technologies: ['React Native', 'Nuxt.js', 'Vue.js', 'JavaScript', 'MySQL', 'Laravel 6'],
+    technologies: ['React Native', 'Nuxt.js', 'Vue.js', 'JavaScript', 'MySQL',  'Node.js'],
     description:
       'Web and mobile application providing facility for salon owners to list their salons and customers to find and book nearby salons.',
     features: [
@@ -96,7 +96,7 @@ export const PROJECTS: Project[] = [
     duration: 'Dec 2021 – Oct 2022',
     role: 'Full Stack Developer',
     teamSize: '1',
-    technologies: ['React Native', 'JavaScript', 'MySQL', 'Laravel 5.4'],
+    technologies: ['React Native', 'JavaScript', 'MySQL', 'Node.js'],
     description:
       'Mobile application for managing live chat and messaging for subscribers and teammates with real-time communication features.',
     features: [
@@ -138,7 +138,7 @@ export const PROJECTS: Project[] = [
     duration: 'Jan 2019 – Aug 2019',
     role: 'Team Lead, Developer',
     teamSize: '4',
-    technologies: ['React.js', 'JavaScript', 'PHP7', 'MongoDB', 'AWS', 'Laravel'],
+    technologies: ['React.js', 'JavaScript', 'PHP7', 'MongoDB', 'AWS', 'Node.js'],
     description:
       'Web application for providing personal loans and loans against properties with multi-role system and comprehensive loan management.',
     features: [
@@ -158,7 +158,7 @@ export const PROJECTS: Project[] = [
     duration: 'Oct 2018 – Dec 2018',
     role: 'Team Lead, Developer',
     teamSize: '3',
-    technologies: ['Angular 6', 'JavaScript', 'PHP7.2', 'MongoDB 3.4', 'AWS', 'Laravel'],
+    technologies: ['Angular 6', 'JavaScript', 'PHP7.2', 'MongoDB', 'AWS', 'Laravel'],
     description:
       'Web application for collecting customer reviews from dealership purchases with social media integration.',
     features: [
@@ -258,7 +258,7 @@ export const PROJECTS: Project[] = [
     duration: 'Mar 2017 – Jul 2017',
     role: 'Front End Developer',
     teamSize: '4',
-    technologies: ['Angular 2', 'JavaScript', 'PHP5', 'MySQL 5', 'AWS', 'Laravel'],
+    technologies: ['Angular 2', 'JavaScript', 'MySQL 5', 'AWS', 'Java'],
     description:
       'E-commerce portal for selling course books to ICAI students in Foundation, Intermediate, and Final courses.',
     features: [
